@@ -1,7 +1,7 @@
 package com.blog.backend.Entity;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.Comments;
+// import org.hibernate.annotations.Comments;
 
 import java.util.ArrayList;
 import java.util.List;
