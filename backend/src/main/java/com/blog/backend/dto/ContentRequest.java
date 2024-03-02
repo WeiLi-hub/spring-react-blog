@@ -11,7 +11,7 @@ public class ContentRequest {
 
     public void setId(Long id){
         this.id = id;
-    }A
+    }
 
     public String getTitle(){
         return title;
