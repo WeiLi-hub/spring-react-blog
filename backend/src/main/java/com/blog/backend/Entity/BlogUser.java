@@ -34,8 +34,7 @@ public class BlogUser {
     public BlogUser() {
     }
 
-    public BlogUser(Long id, String userName, String authority, String password, String email) {
-        this.id = id;
+    public BlogUser(String userName, String authority, String password, String email) {
         this.userName = userName;
         this.authority = authority;
         this.password = password;
