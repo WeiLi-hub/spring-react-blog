@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.blog.backend.Entity.Post;
 import com.blog.backend.Repository.BlogUserRepository;
 import com.blog.backend.Repository.PostRepository;
+import com.blog.backend.Service.AuthService;
 import com.blog.backend.dto.ContentRequest;
 import com.fasterxml.jackson.databind.JsonNode;
 
@@ -23,11 +24,14 @@ import java.util.List;
 @RequestMapping("/api")
 public class PostController {
     private final PostRepository postRepository;
-    
+    private final AuthService authService;
+
     public PostController(
         PostRepository postRepository,
-        BlogUserRepository blogUserRepository){
+        BlogUserRepository blogUserRepository,
+        AuthService authService){
         this.postRepository = postRepository;
+        this.authService = authService;
     }
     
     private Post newPost(ContentRequest contentRequest){
@@ -36,6 +40,7 @@ public class PostController {
                 contentRequest.getContent(),
                 LocalDate.now(),
                 LocalDate.now(),
+                authService.getBlogUser().orElseThrow(),
                 new ArrayList<>()
         );
     }
