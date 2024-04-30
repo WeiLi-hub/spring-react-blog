@@ -32,7 +32,8 @@ public class PostController {
     public PostController(
         PostRepository postRepository,
         BlogUserRepository blogUserRepository,
-        AuthService authService){
+        AuthService authService
+        ){
         this.postRepository = postRepository;
         this.authService = authService;
     }
